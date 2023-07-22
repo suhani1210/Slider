@@ -37,11 +37,17 @@
             position: absolute;
             content: "";
             background-color: whitesmoke;
-            width: 50px;
-            height: 50px;
+            width: 51px;
+            height: 51px;
             border-radius: 50%;
             z-index: 2;
             box-shadow: 0px 0px 2px black;
+            top: 11%;
+            margin-left: 4px;
+            background-image: url('./ripple.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: waves 5s ease-out infinite 0s both;
         }
         input[type=checkbox]:checked{
             position: absolute;
@@ -49,10 +55,13 @@
             z-index: 2;
         }
         input[type=checkbox]:checked+.slider+.back{
+            background-image: none;
             background-color: black;
         }
         input[type=checkbox]:checked+.slider{
-            background-color: #3B3B3B;
+            background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+            background-size: 100%;
+            background-position: center;
         }
         label{
             display:inline-block;
@@ -72,18 +81,21 @@
             left: 0;
             bottom: 0;
             right: 0;
-            padding: 1px;
+            padding: 3%;
             border: 2px solid black;
-            border-radius: 30px 30px 30px 30px;
-            background-color: #E0FFFF;
+            border-radius: 30px;
+background-image: url("cloud.svg"), linear-gradient( 180.7deg,  rgba(0,213,255,1) 2.5%, rgba(79,255,255,1) 97.7% );
             z-index: 1;
+            background-repeat: no-repeat;
+            background-size: 60%, 100%;
+            background-position: 100px 0px, center;
             transition: all 1s;
         }
         .slider .t1{
             position: relative;
-            top: -12px;
-            left: 0.7px;
-            border-radius: 30px 30px 30px 30px;
+            top: -28%;
+            left: 1%;
+            border-radius: 30px;
             bottom: 1px;
         }
         .slider .t2{
@@ -92,7 +104,7 @@
             left: 44%;
         }
         svg{
-            animation: sun 36s 0s infinite forwards; 
+            animation: sun 72s 0s infinite forwards; 
         }
         @keyframes sun{
             0%{
@@ -115,6 +127,14 @@
         }
         img{
             border-radius: 30px 30px 30px 30px;
+        }
+        @keyframes waves{
+            0%, 100%{
+                background-size: 0% 0%;
+            }
+            50%{
+                background-size: 245% 245%;
+            }
         }
     </style>
 </head>
